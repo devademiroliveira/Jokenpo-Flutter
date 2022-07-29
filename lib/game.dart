@@ -20,14 +20,15 @@ class _GameState extends State<Game> {
   final String _titulo = 'We gonna play game?';
   var _placarCpu = 0;
   var _placarPlayer = 0;
+  var _placarEmpate = 0;
 
   void _opcaoSelect(String escolhaUser) {
     var opcoes = ['Papel', 'Pedra', 'Tesoura'];
     var numero = Random().nextInt(3);
     var _escolhaCpu = opcoes[numero];
 
-    //print('CPU:' + _escolhaCpu);
-    //print('PLAYER:' + escolhaUser);
+    // print('CPU:' + _escolhaCpu);
+    // print('PLAYER:' + escolhaUser);
 
     // Exibindo imagem escolhida pela CPU
     switch (_escolhaCpu) {
@@ -75,6 +76,7 @@ class _GameState extends State<Game> {
         _mensagem = 'Escolheu: ' + escolhaUser + '... Empatou! ';
         _imageDefault = _imageTied;
         _notificacao = 'CPU: ' + _escolhaCpu;
+        _placarEmpate++;
       });
     }
   }
@@ -177,6 +179,24 @@ class _GameState extends State<Game> {
                     ),
                     Text(
                       '$_placarPlayer',
+                      style: const TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    const Text(
+                      'Empate',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      '$_placarEmpate',
                       style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
