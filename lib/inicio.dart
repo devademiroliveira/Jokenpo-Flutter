@@ -46,7 +46,7 @@ class _InicioState extends State<Inicio> {
                 decoration: const InputDecoration(
                   labelStyle: TextStyle(inherit: true),
                   icon: Icon(Icons.drive_file_rename_outline),
-                  labelText: 'Digite seu nome',
+                  labelText: 'Qual é o seu nome?',
                   // border: OutlineInputBorder(
                   //   borderRadius: BorderRadius.all(
                   //       Radius.circular(50.0)), // Borda do TextField
